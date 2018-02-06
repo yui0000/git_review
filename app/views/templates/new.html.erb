@@ -1,0 +1,24 @@
+<table>
+    <%= form_for @template do |f| %>
+    <tr>
+        <td>テンプレート名（必須:MAX15文字）</td>
+        <td><%= f.text_field :name, autofocus: true, maxlength: "15" %></td>
+    </tr>
+    <tr>
+        <td>ジャンル(必須：公開先のジャンルになります)</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>色（必須）</td>
+        <td><%= f.radio_button :color, "red lighten-3" %>赤</td>
+        <td><%= f.radio_button :color, "blue lighten-3" %>青</td>
+        <td><%= f.radio_button :color, "ight-blue lighten-3" %>水色</td>
+        <td><%= f.radio_button :color, "eal lighten-3" %>緑</td>
+        <td><%= f.radio_button :color, "yellow lighten-3" %>黄色</td>
+    </tr>
+    <td>
+    <input type="submit" value="SENT"></td>
+    <% end %>
+</table>
+    
+    
