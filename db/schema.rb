@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180203061228) do
+ActiveRecord::Schema.define(version: 20180207094153) do
 
   create_table "review_contents", force: :cascade do |t|
     t.integer  "template_item_id", limit: 4
@@ -37,10 +37,10 @@ ActiveRecord::Schema.define(version: 20180203061228) do
 
   create_table "template_items", force: :cascade do |t|
     t.string   "type",        limit: 255
-    t.string   "name",        limit: 255
     t.integer  "template_id", limit: 4
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
+    t.string   "itemname",    limit: 255
   end
 
   create_table "templates", force: :cascade do |t|
