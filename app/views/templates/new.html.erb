@@ -16,16 +16,17 @@
         <td><%= f.radio_button :color, "eal lighten-3" %>緑</td>
         <td><%= f.radio_button :color, "yellow lighten-3" %>黄色</td>
     </tr>
-        <%= f.fields_for :template_items do |i| %>
-    <tr>
-         <td><%= i.text_field :itemname, maxlength: "15" %></td>
-        <td><input type="text" value="小テキストエリア(文字数制限：150文字)"></td>
-        <td><%= i.text_field :itemname, maxlength: "15" %></td>
-    </tr>
-    <% end %>    
-        <%= f.hidden_field :user_id, value: current_user.id %>
-    <input type="submit" value="SENT"></td>
-    <% end %>
 </table>
+<div class="field">
     
-    
+    <%= f.fields_for :template_items do |i| %>
+       <%= i.text_field :itemname %>
+        <%= link_to_remove_association "Remove this", i %>
+    <% end %> 
+    <%= link_to_add_association "template_item add", f, :template_items %>
+</div>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+    <%= button_tag type: "submit" do %>
+              投稿する
+    <% end %>
+    <% end %>
