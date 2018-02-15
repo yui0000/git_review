@@ -2,37 +2,12 @@
 <html>
 <head>
   <title>Reviewapp</title>
-  <!-- Compiled and minified CSS --
-  <!--
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-  -->
-  <!-- Compiled and minified JavaScript -->
-  <!--
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-  -->
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-    <nav class="nav-extended blue-grey lighten-3">
-    <div class="nav-wrapper">
-      <a href="#!" class="brand-logo">Title</a>
-      <ul class="right">
-        <li><a href="#">公開一覧</a></li>
-        <li><a href="#">ユーザー</a></li>
-        <li><%= link_to "ログアウト", "/users/sign_out", method: :delete %></li>
-      </ul>
-    </div>
-    <div class="nav-content">
-      <ul class="tabs tabs-transparent">
-        <li class="tab red lighten-4"><a href="#test1"><span class="blue-grey-text text-darken-3">映画</span></a></li>
-        <li class="tab yellow lighten-4"><a href="#test2"><span class="blue-grey-text text-darken-3">演劇</span></a></li>
-        <li class="tab light-blue lighten-4"><a href="#test3"><span class="blue-grey-text text-darken-3">本</span></a></li>
-        <li class="tab"><a href="#test4">template</a></li>
-      </ul>
-    </div>
-  </nav>
+
 <%= yield %>
 
 </body>

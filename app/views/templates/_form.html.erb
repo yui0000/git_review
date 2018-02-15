@@ -1,0 +1,21 @@
+<%= form_for (@template) do |f| %>
+    <%= f.text_field :name, autofocus: true, maxlength: "15" %></br>
+    <%= f.radio_button :color, "red lighten-3" %>赤</br>
+    
+    <label><input type="radio" name="itemtype" value="0" checked>小項目</label>
+    <label><input type="radio" name="itemtype" value="1">中項目</label>
+    <label><input type="radio" name="itemtype" value="2">大項目</label>
+    
+    <%= f.fields_for :template_items do |i| %>
+    
+       <%= render 'template_item_fields', f: i %>
+       <div class="field">
+            <%= link_to_add_association "template_item add", f, :template_items %>
+       </div>
+       
+    <% end %> 
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <%= button_tag type: "submit" do %>
+        投稿する
+    <% end %>
+<% end %>

@@ -1,1 +1,17 @@
-<tr><td><%= f.text_field :itemname %></td></tr>
+<script>
+    var area_val = $('[name=itemtype]:checked').val();
+    $(function(){
+        if(area_val == 1) {
+            $('.radioitem.new').removeClass('new').hide().removeAttr('id').removeAttr('name')
+            $('.textitem.new').removeClass('new')
+        }else if(area_val == 0){
+            $('.radioitem.new').removeClass('new')
+            $('.textitem.new').removeClass('new').hide().removeAttr('id').removeAttr('name')
+        }
+    })    
+</script>
+
+<div class="field">
+<%= f.text_field :itemname, class: "radioitem new" %><br/>
+<%= f.text_field :itemname, class: "textitem new" %><br/>
+</div>
