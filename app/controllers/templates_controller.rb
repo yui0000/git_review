@@ -13,7 +13,7 @@ class TemplatesController < ApplicationController
     
     private 
     def template_params
-        params.require(:template).permit(:name, :color, :user_id, template_items_attributes: [:id, :type, :itemname, :_destroy])
+        params.require(:template).permit(:name, :color, :user_id, template_items_attributes: [:id, :fieldclass, :itemname, :_destroy])
     end
     
 end

@@ -8,7 +8,6 @@
     
     <%= f.fields_for :template_items do |i| %>
     
-       <%= render 'template_item_fields', f: i %>
        <div class="field">
             <%= link_to_add_association "template_item add", f, :template_items %>
        </div>

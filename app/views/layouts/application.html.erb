@@ -7,8 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <% if user_signed_in? %>
+    <% Array(@templates).each do |template| %>
+      <a href="/templates/<%= template.id %>/reviews"><%= template.name %></a><br/>
+    <% end %>
+  <% end %>
+  <a href="/templates/new">テンプレート作成</a><br/>
 
 <%= yield %>
 
+<%= link_to "ログアウト", "/users/sign_out", method: :delete %>
 </body>
 </html>
