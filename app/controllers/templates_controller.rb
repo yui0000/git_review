@@ -1,5 +1,7 @@
 class TemplatesController < ApplicationController
-    
+    include Common
+    before_action :templateList
+        
     def new
         @template = current_user.templates.new
         @template.template_items.build
@@ -7,7 +9,6 @@ class TemplatesController < ApplicationController
     
     
     def create
-        binding.pry
         Template.create(template_params)
     end
     
